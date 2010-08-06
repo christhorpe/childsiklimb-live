@@ -1,0 +1,4 @@
+<Response>
+	<Say>Hello, tell us what's going on in the Kilimanjaro Climb, followed by the hash key.</Say>
+	<Record action="/phone/record" method="GET" maxLength="60" timeout="30" finishOnKey="#"/>
+</Response>

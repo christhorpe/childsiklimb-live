@@ -1,0 +1,16 @@
+cron:
+- description: justgiving scrape
+  url: /scrape/justgiving/queue
+  schedule: every 5 minutes
+
+- description: flickr scrape
+  url: /scrape/flickr
+  schedule: every 5 minutes
+
+- description: twitter scrape
+  url: /scrape/twitter
+  schedule: every 5 minutes
+
+- description: geo scrape
+  url: /scrape/gmap
+  schedule: every 5 minutes

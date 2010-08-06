@@ -1,0 +1,9 @@
+<h3>Audio recording</h3>
+<p>
+	<audio src="{{voice.audio_url}}.mp3" controls="controls">
+		<embed target="myself" type="audio/mpeg" loop="false" autoplay="false" src="{{voice.audio_url}}.mp3"></embed>
+	</audio>
+</p>
+<div>
+	Uploaded {{voice.created_at|timesince}} ago
+</div>

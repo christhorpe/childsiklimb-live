@@ -1,0 +1,93 @@
+<html>
+<head>
+	<title>Geo Updater</title>
+	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+	<script type="text/javascript" src="/static/js/jquery-1.4.2.min.js"></script>
+	<script type="text/javascript" src="/static/js/yqlgeo.js"></script>
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no, min-width:300" />
+</head>
+<body>
+<div id="location">finding you</div>
+<div id="map_canvas"></div>
+<textarea id="note"></textarea>
+<br />
+<br />
+<div id="locationbutton"> <a href="/geo">Refresh</a></div>
+<style type="text/css">
+body {
+	max-width: 320px;
+	background-color: #ccc;
+	font-family: sans-serif;
+}
+
+#note {
+	height:100px;
+	width:300px;
+}
+#location {
+	margin-bottom: 5px;
+}
+
+#map_canvas {
+	height: 250px;
+	width: 300px;
+}
+
+
+#locationbutton a {
+	padding: 5px;
+	background-color: #000;
+	color: #fff;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+</style>
+<script type="text/javascript">
+
+	function reportLocation(lat, lng) {
+		var note = $("#note").val();
+		$("#location").load("/api/geo?lat="+ lat +"&lng=" + lng +"&note=" + escape(note));
+	}
+
+	var lat = 0.0;
+	var lng = 0.0;
+ 	var locationtext = "You're here!";
+	if(navigator.geolocation)
+	{
+		navigator.geolocation.getCurrentPosition(function(position){
+        var lat = position.coords.latitude;
+        var lng = position.coords.longitude;
+		$('#location').html("Latitude: " + lat + "<br />Longitude:" + lng);
+		$("#locationbutton").prepend("<a href='javascript:reportLocation("+ lat +","+ lng +")'>Log this position</a>");
+		var latlng = new google.maps.LatLng(lat,lng);
+		var myOptions = {
+			zoom: 16,
+			center: latlng,
+			draggable: false,
+			disableDoubleClickZoom: true,
+			scrollwheel: false,
+			mapTypeControl: false,
+			keyboardShortcuts: false,
+			navigationControl: false,
+			mapTypeId: google.maps.MapTypeId.SATELLITE
+    	};
+    	var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+		yqlgeo.get(lat,lng, function(place){
+  			locationtext = "<p>You're here in " + place.place.name + ", " + place.place.country.content + "</p>";
+			var infowindow = new google.maps.InfoWindow({
+      			position: latlng, 
+    			content: locationtext
+			});
+			infowindow.open(map);
+		});
+
+	});
+	}
+	else
+	{
+		$('#location').html("Sadly your browser isn't location aware.");
+	}
+</script>
+</body>
+</html>

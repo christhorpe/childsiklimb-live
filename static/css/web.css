@@ -1,0 +1,313 @@
+html { 
+	height: 100%;
+	width: 100%;
+	min-width: 1000px;
+	font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+body { 
+	height: 100%; 
+	margin: 0px; 
+	padding: 0px; 
+	min-width: 1000px;
+}
+
+#debug {
+	position:absolute;
+	top: 70px;
+	z-index: 10;
+}
+
+#map_canvas { 
+	height: 100%; 
+	z-index: 1;
+}
+
+div.menu {
+	position:absolute;
+	left: 10px;
+	top: 100px;
+	margin: 0px;
+	padding: 0px;
+	z-index: 10;
+	color: #fff;
+	opacity: 0.8;
+}
+
+div.thumbnailset {
+	max-width: 250px;
+	margin: 0px;
+	padding-left: 2px;
+}
+
+div.menu li {
+	list-style: none;
+	font-size: 80%;
+	padding: 10px;
+	background-color: #000;
+	margin-bottom: 1px;
+	max-width: 230px;
+}
+
+div.menu li.news {
+	list-style: none;
+	font-size: 80%;
+	padding: 10px;
+	background-color: #111;
+	margin-bottom: 1px;
+	opacity: 0.8;
+}
+
+div.menu li.news span.newsimg {
+	margin-right: 3px;
+}
+
+div.thumbnailset img {
+	padding-right: 3px;
+	margin: 0px;
+}
+
+div.menu li a {
+	text-decoration: none;
+	color: #fff;
+}
+
+div.menu li a:hover {
+	text-decoration: underline;
+	color: #c60;
+}
+
+
+div.content {
+	position:absolute;
+	left: 280px;
+	top: 100px;
+	margin: 0px;
+	padding: 0px;
+	z-index: 10;
+	background-color: #fff;
+	opacity: 1;
+	padding: 10px;
+	font-size: 90%;
+	min-width: 500px;
+	min-height: 500px;
+	color: #222;
+	border: 1px solid #ccc;
+}
+
+div.content div.close {
+	float: right;
+	font-size: 75%;
+	color: #999;
+}
+
+div.close a {
+	color: #999;
+	text-decoration: none;
+}
+
+div.close a strong {
+	border: 1px dotted #ccc;
+}
+
+div.close a:hover {
+	color: #ccc;
+}
+
+
+div.content h3 {
+	padding: 0px;
+	margin: 0px;
+	border-bottom: 1px dotted #ccc;
+	color: #333;
+}
+
+
+div.header {
+	position:absolute;
+	left: 0px;
+	top: 0px;
+	margin: 0px;
+	padding: 0px;
+	z-index: 10;
+	background-color: #fff;
+	height: 50px;
+	width: 100%;
+	border-bottom: 1px solid #333;
+	min-width: 1000px;
+}
+
+span.logo {
+}
+
+span.logo img {
+	padding: 5px;
+}
+
+span.teamlabel {
+	position: absolute;
+	left: 170px;
+	top: 15px;
+	font-weight: bold;
+	color: #999;
+}
+
+span.team {
+	position: absolute;
+	left: 250px;
+}
+
+span.team img {
+	padding: 0px;
+	margin: 0px;
+}
+
+span.totalizer {
+	position: absolute;
+	left: 760px;
+	top: 15px;
+	color: #999;
+	font-weight: bold;
+}
+
+span.totalizer strong {
+	color: #000;
+}
+
+
+div.countdown {
+	position:absolute;
+	top: 100px;
+	z-index: 5;
+	color: #fff;
+}
+
+div.countdownLabel {
+	position: relative;
+    left: 50%;
+	font-size: 200%;
+	font-weight: bold;
+	letter-spacing -2;
+	opacity: 0.6;
+}
+
+div.hasCountdown {
+	position: relative;
+    left: 50%;
+}
+
+span.countdown_row {
+}
+
+span.countdown_section {
+	float: left;
+	font-size: 90%;
+	color: #fff;
+	letter-spacing: -0.7px;
+	text-align: center;
+	padding: 20px;
+	min-width: 100px;
+	background-color: #000;
+	opacity: 0.3;
+	margin: 1px;
+}
+
+span.countdown_amount {
+	font-size: 500% !important;
+	font-weight: bold;
+	color: #eee;
+	letter-spacing: -3px;
+}
+
+
+
+div.inforow {
+	position:absolute;
+	left: 0px;
+	top: 50px;
+	margin: 0px;
+	padding: 0px;
+	z-index: 10;
+	height: 20px;
+	width: 100%;
+	min-width: 1000px;
+}
+
+div.inforow span {
+	background-color: #333;
+	font-size: 75%;
+	color: #fff;
+	padding: 3px;
+	z-index: 10;
+	opacity: 0;
+}
+
+#what {
+	position:absolute;
+	left: 750px;	
+/*	opacity: 1 !important; */
+	font-size: 90%;
+	background-color: #000;
+	padding-left: 10px;
+	padding-top: 5px;
+	padding-right: 10px;
+	padding-bottom: 5px;
+}
+
+#kevin {
+	position:absolute;
+	left: 250px;
+}
+
+#dany {
+	position:absolute;
+	left: 300px;	
+}
+
+#dave {
+	position:absolute;
+	left: 350px;	
+}
+
+#jodie {
+	position:absolute;
+	left: 400px;	
+}
+
+#leanne {
+	position:absolute;
+	left: 450px;	
+}
+
+#liam {
+	position:absolute;
+	left: 500px;	
+}
+
+#rebecca {
+	position:absolute;
+	left: 550px;	
+}
+
+#scott {
+	position:absolute;
+	left: 600px;	
+}
+
+#shelby {
+	position:absolute;
+	left: 650px;	
+}
+
+#tanya {
+	position:absolute;
+	left: 700px;	
+}
+
+.visible {
+	opacity: 1 !important;
+}
+
+.invisible {
+	opacity: 0 !important;
+}
